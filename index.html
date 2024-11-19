@@ -35,6 +35,15 @@
 
       <script>
 
+        if(window.location.search.includes("lost=True")){
+          console.log(document.body.children[1])
+          document.body.children[1].innerHTML = `
+          <p>You Lost!, try again</p>
+          `
+        }
+
+
+
         let elt = document.querySelector("#main_text")
         document.addEventListener("keypress", (ev)=>{
           console.log(ev.key);
