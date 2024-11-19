@@ -32,5 +32,18 @@
         <p id="main_text" class="font-black text-[rgba(0,0,0,0.3)] text-[20vmin]">Enter</p>
 
       </div>
+
+      <script>
+
+        let elt = document.querySelector("#main_text")
+        document.addEventListener("keypress", (ev)=>{
+          console.log(ev.key);
+          if(ev.key == elt.innerText){
+            elt.innerText = ev.key
+          }else{
+            window.location.replace("/?lost=True")
+          }
+        })
+      </script>
 </body>
 </html>
