@@ -20,9 +20,9 @@
             <span class="ml-3 text-xl">Click Reaction Test</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900" href="/">Home</a>
-            <a class="mr-5 hover:text-gray-900" href="/about.html">About</a>
-            <a class="mr-5 hover:text-gray-900" href="/contact.html">Contact</a>
+            <a class="mr-5 hover:text-gray-900" href="KeyboardReactionTest/">Home</a>
+            <a class="mr-5 hover:text-gray-900" href="KeyboardReactionTest/about.html">About</a>
+            <a class="mr-5 hover:text-gray-900" href="KeyboardReactionTest/contact.html">Contact</a>
             <a class="mr-5 hover:text-gray-900" href="https://github.com/diy-it-all">Github</a>
           </nav>
         </div>
@@ -41,7 +41,7 @@
           <p>You Lost!, Score-> ${window.sessionStorage.getItem("score")}</p>
           <p>Max Score-> ${window.localStorage.getItem("max_score")}</p>
           <br/>
-          <button class="p-4 rounded bg-green-400 hover:bg-green-600" onclick="location.replace('/')" autofocus>Try Again</button>
+          <button class="p-4 rounded bg-green-400 hover:bg-green-600" onclick="location.replace('KeyboardReactionTest/')" autofocus>Try Again</button>
           </div>
           `
         }
@@ -51,7 +51,7 @@
         let elt = document.querySelector("#main_text")
         let keys = [];
         let score = 0;
-        let timer = setTimeout(()=>{window.location.replace("/lost=True")}, 1000)
+        let timer = setTimeout(()=>{window.location.replace("KeyboardReactionTest/lost=True")}, 1000)
         for(let i = 33; i <=126; i++){
           keys[keys.length] = String.fromCharCode(i)
         }
@@ -61,11 +61,11 @@
             elt.innerText = keys[Math.floor(Math.random() * (keys.length+1))]
             score += 1
             clearTimeout(timer)
-            timer = setTimeout(()=>{window.location.replace("/lost=True")}, 1000)
+            timer = setTimeout(()=>{window.location.replace("KeyboardReactionTest/lost=True")}, 1000)
           }else{
             window.localStorage.setItem("max_score", Math.max(window.localStorage.getItem("Max Score"), score))
             window.sessionStorage.setItem("score", score);
-            window.location.replace("/?lost=True")
+            window.location.replace("KeyboardReactionTest/?lost=True")
           }
         })
       </script>
